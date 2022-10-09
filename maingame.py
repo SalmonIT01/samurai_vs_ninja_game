@@ -33,7 +33,7 @@ player1_score = 0
 player2_score = 0
 ROUND = 0
 round_over = False
-roundover_cooldown = 2000
+roundover_cooldown = 3000
 
 
 #define swordman
