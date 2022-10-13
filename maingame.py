@@ -31,10 +31,11 @@ intro_count = 4
 last_count_update = pygame.time.get_ticks()
 player1_score = 0
 player2_score = 0
-ROUND = 0
+ROUND = 1
 round_over = False
 roundover_cooldown = 3000
 
+restart = pygame.image.load('assets1/img/bg/restart.png').convert_alpha()
 
 #define swordman
 Ninja_size = 162
@@ -49,7 +50,7 @@ Samurai_data = [Samurai_size,Samurai_scale,Samurai_offset]
 
 #load music and sounds
 pygame.mixer.music.load("assets1/audio/music3.mp3")
-pygame.mixer.music.set_volume(0.1)
+pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
 sword_fx = pygame.mixer.Sound("assets1/audio/swordwind.mp3")
@@ -96,6 +97,8 @@ Fighter_1 = Fighter(1,200,310,False,Ninja_data,ninja_sheet,Ninja_animation_step,
 Fighter_2 = Fighter(2,700,310,True,Samurai_data,samurai_sheet,Samurai_animation_step,sword_fx,katana_fx)
 
 
+
+  
 run = True
 while run:
 	draw_bg()
@@ -109,6 +112,8 @@ while run:
 
 	clock.tick(FPS)
 	#update time countdown
+
+	
 	if intro_count <=0:
 		Fighter_1.move(ScreenW,ScreenH,Fighter_2,round_over)
 		Fighter_2.move(ScreenW,ScreenH,Fighter_1,round_over)
@@ -117,6 +122,7 @@ while run:
 		if (pygame.time.get_ticks() - last_count_update) >= 1000:
 			intro_count -= 1
 			last_count_update = pygame.time.get_ticks()
+
 			
  
 	
@@ -149,8 +155,11 @@ while run:
 		screen.blit(p1win,(100,100))
 		round_over = True
 	elif player1_score == 0 and player2_score == 2 :
+		
+
 		screen.blit(p2win,(420,100))
 		round_over = True
+		
 	elif player1_score == 2 and player2_score == 1 :
 		screen.blit(p1win,(100,100))
 		round_over = True
