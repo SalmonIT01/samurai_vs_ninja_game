@@ -6,10 +6,10 @@ pygame.init()
 ScreenH = 600
 ScreenW = 1000
 
-screen = pygame.display.set_mode((ScreenW,ScreenH))
 
-creen = pygame.display.set_mode((ScreenW,ScreenH))
+screen = pygame.display.set_mode((ScreenW,ScreenH))
 pygame.display.set_caption("Samurai VS Ninja!")
+
 
 #set framerate
 clock = pygame.time.Clock()
@@ -25,6 +25,9 @@ BLUE = (0, 0, 255)
 victory_img = pygame.image.load("assets1/img/bg/icon.png").convert_alpha()
 p1win = pygame.image.load('assets1/img/bg/player1win.png').convert_alpha()
 p2win = pygame.image.load('assets1/img/bg/player2win.png').convert_alpha()
+#icon game
+icon = pygame.image.load('assets1/img/bg/katana.png')
+pygame.display.set_icon(icon)
 
 #define game var
 intro_count = 4
@@ -34,8 +37,6 @@ player2_score = 0
 ROUND = 1
 round_over = False
 roundover_cooldown = 3000
-
-restart = pygame.image.load('assets1/img/bg/restart.png').convert_alpha()
 
 #define swordman
 Ninja_size = 162
