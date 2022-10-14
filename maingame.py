@@ -50,7 +50,7 @@ Samurai_data = [Samurai_size,Samurai_scale,Samurai_offset]
 
 #load music and sounds
 pygame.mixer.music.load("assets1/audio/music3.mp3")
-pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.set_volume(0.15)
 pygame.mixer.music.play(-1, 0.0, 5000)
 
 sword_fx = pygame.mixer.Sound("assets1/audio/swordwind.mp3")
@@ -148,8 +148,7 @@ while run:
 			round_over = True
 			round_over_time = pygame.time.get_ticks()
 
-		if Fighter_2.alive == False or Fighter_1.alive == False:
-			ROUND += 1
+
 
 	elif player1_score == 2 and player2_score == 0 :
 		screen.blit(p1win,(100,100))
@@ -169,9 +168,11 @@ while run:
 
 
 	elif round_over == True:
+		
 		screen.blit(victory_img,(360,100))
-
+		
 		if pygame.time.get_ticks() - round_over_time > roundover_cooldown:
+			ROUND += 1
 			round_over = False
 			intro_count = 4
 			Fighter_1 = Fighter(1,200,310,False,Ninja_data,ninja_sheet,Ninja_animation_step,sword_fx,knife_fx)
