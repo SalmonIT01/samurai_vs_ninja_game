@@ -28,7 +28,7 @@ class Fighter():
 	   self.takehit = False
 	   self.alive = True
 
-
+    
 	def load_img(self,sprite_sheet,animation_step):
 		
 		animation_list = []
@@ -186,6 +186,11 @@ class Fighter():
 					self.takehit = False
 					self.attacking = False
 					self.attack_cooldown = 10
+				
+				if self.action == 5 and self.attacking2 == True:
+					self.takehit = False
+					self.attacking2 = False
+					self.attack_cooldown = 10
 			#p2
 			if self.player == 2:
 				if self.action == 3 :
@@ -199,6 +204,11 @@ class Fighter():
 				if self.action == 5:
 					self.takehit = False
 					self.attacking = False
+					self.attack_cooldown = 10
+				
+				if self.action == 5 and self.attacking2 == True:
+					self.takehit = False
+					self.attacking2 = False
 					self.attack_cooldown = 10
 
 	def attack(self,target):
