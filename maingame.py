@@ -5,7 +5,7 @@ mixer.init()
 pygame.init()
 ScreenH = 600
 ScreenW = 1000
-
+#พี่ไม่เชื่อ
 
 screen = pygame.display.set_mode((ScreenW,ScreenH))
 pygame.display.set_caption("Samurai VS Ninja!")
